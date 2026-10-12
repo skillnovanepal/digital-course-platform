@@ -4,167 +4,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn AI, video editing, Canva and affiliate marketing with Digital Course Platform.">
-  <title>Digital Course Platform | Learn Digital Skills</title>
+  <meta name="theme-color" content="#10152f">
+  <title>Skill Nova Nepal | Learn. Grow. Earn.</title>
+  <meta name="description" content="Explore digital skills, online courses and affiliate marketing training with Skill Nova Nepal.">
   <style>
+    :root {
+      --navy: #10152f;
+      --purple: #7657f6;
+      --cyan: #63e4d1;
+      --light: #f6f7fc;
+      --text: #20243a;
+      --muted: #686d82;
+      --white: #ffffff;
+    }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f8fc;
-      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--light);
       line-height: 1.6;
     }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: auto; }
     header {
-      background: #fff;
-      padding: 16px 6%;
+      background: var(--navy);
+      color: white;
+      padding: 17px 0;
+    }
+    .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
-      border-bottom: 1px solid #e8eaf0;
     }
-    .brand { font-size: 20px; font-weight: 800; color: #5145cd; }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #273149; text-decoration: none; font-size: 14px; }
-    .hero {
-      padding: 68px 6% 58px;
-      text-align: center;
-      background: linear-gradient(135deg, #eeedff, #f8fbff);
-    }
-    .tag {
+    .brand { font-size: 23px; font-weight: 800; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { font-size: 14px; color: #e3e5f4; }
+    .nav-links a:hover { color: var(--cyan); }
+    .button {
       display: inline-block;
-      padding: 6px 13px;
-      background: #fff;
-      color: #5145cd;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: var(--purple);
+      color: white;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      text-align: center;
+    }
+    .button:hover { filter: brightness(1.08); }
+    .button-light { background: white; color: var(--navy); }
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, #7657f655, transparent 28%),
+        linear-gradient(135deg, #10152f, #222454);
+      color: white;
+      padding: 76px 0 82px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 42px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #ffffff18;
+      border: 1px solid #ffffff30;
+      color: var(--cyan);
+      padding: 7px 13px;
       border-radius: 30px;
       font-size: 13px;
-      font-weight: bold;
+      font-weight: 700;
     }
-    h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.15; margin: 20px auto; max-width: 800px; }
-    .hero p { max-width: 650px; margin: 0 auto 26px; color: #566078; }
-    .btn {
-      display: inline-block;
-      background: #5145cd;
-      color: #fff;
-      padding: 12px 21px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: bold;
+    h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.12; margin: 20px 0; }
+    h1 span { color: var(--cyan); }
+    .hero p { color: #d9dcef; font-size: 17px; max-width: 580px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 27px; }
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff20, #ffffff08);
+      border: 1px solid #ffffff30;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px #0002;
     }
-    section { padding: 48px 6%; }
-    .section-title { text-align: center; margin-bottom: 28px; }
-    .section-title h2 { font-size: 29px; margin-bottom: 8px; }
-    .section-title p { color: #687187; }
-    .courses {
+    .hero-card h2 { font-size: 25px; margin-top: 0; }
+    .skill-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .skill {
+      background: #ffffff12;
+      padding: 15px 12px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    .skill b { display: block; font-size: 22px; margin-bottom: 5px; }
+    section { padding: 66px 0; }
+    .section-heading { text-align: center; max-width: 700px; margin: 0 auto 35px; }
+    .section-heading h2 { font-size: clamp(28px, 4vw, 39px); margin: 0 0 10px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .plans {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
+      align-items: stretch;
     }
-    .card {
+    .plan {
       background: white;
-      border: 1px solid #e8eaf0;
-      padding: 23px;
-      border-radius: 15px;
-      box-shadow: 0 5px 18px rgba(20, 30, 70, .04);
+      border: 1px solid #e6e8f2;
+      border-radius: 18px;
+      padding: 23px 19px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 28px #20243a08;
     }
-    .emoji { font-size: 31px; }
-    .card h3 { margin-bottom: 8px; }
-    .card p { color: #687187; font-size: 14px; }
-    .about {
-      text-align: center;
+    .plan.featured { border: 2px solid var(--purple); transform: translateY(-7px); }
+    .plan-tag {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .plan h3 { font-size: 23px; margin: 7px 0; }
+    .price { font-size: 31px; font-weight: 800; margin-top: 13px; }
+    .old-price { color: #85899a; font-size: 15px; }
+    .vat { font-size: 12px; color: #397767; margin: 3px 0 15px; }
+    .plan ul { list-style: none; padding: 0; margin: 12px 0 22px; flex: 1; }
+    .plan li { padding: 7px 0; border-bottom: 1px solid #f0f1f7; font-size: 13px; }
+    .plan li::before { content: "✓ "; color: #159c7c; font-weight: 800; }
+    .plan .button { width: 100%; margin-top: auto; }
+    .note { color: var(--muted); font-size: 12px; text-align: center; margin-top: 22px; }
+    .benefits { background: white; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .benefit {
+      padding: 25px;
+      border: 1px solid #e8eaf3;
+      border-radius: 16px;
       background: #fff;
     }
-    .about p { max-width: 680px; margin: 0 auto 22px; color: #687187; }
-    footer {
+    .benefit .icon { font-size: 30px; }
+    .benefit h3 { margin: 12px 0 5px; }
+    .benefit p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .cta {
+      background: linear-gradient(120deg, #201d55, #7657f6);
+      color: white;
+      border-radius: 22px;
+      padding: 42px;
       text-align: center;
-      padding: 25px 6%;
-      background: #171d35;
-      color: #e6e8f4;
-      font-size: 13px;
     }
-    @media (max-width: 480px) {
-      header { padding: 14px 5%; }
-      .brand { font-size: 18px; }
-      nav { gap: 12px; }
-      .hero { padding: 48px 5%; }
-      section { padding: 38px 5%; }
+    .cta h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 10px; }
+    .cta p { color: #e3e1ff; }
+    footer { background: var(--navy); color: #e3e5f4; padding: 32px 0; }
+    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    footer p { margin: 5px 0; font-size: 13px; color: #c0c5df; }
+    @media (max-width: 900px) {
+      .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 600px; }
+    }
+    @media (max-width: 560px) {
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 13px; }
+      .hero { padding: 52px 0; }
+      section { padding: 48px 0; }
+      .plans, .benefit-grid { grid-template-columns: 1fr; }
+      .plan.featured { transform: none; }
+      .cta { padding: 30px 18px; }
+      .skill-list { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="brand">Digital Course Platform</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#courses">Courses</a>
-      <a href="#about">About</a>
-      <a href="#join">Join Us</a>
-    </nav>
+    <div class="container nav">
+      <a class="brand" href="#">Skill Nova <span>Nepal</span></a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#plans">Plans</a>
+        <a href="#benefits">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <span class="tag">YOUR DIGITAL LEARNING JOURNEY</span>
-      <h1>Learn Digital Skills.<br>Build Your Future.</h1>
-      <p>
-        Explore practical digital skills in AI, video editing, Canva
-        and affiliate marketing. Learn step by step at your own pace.
-      </p>
-      <a class="btn" href="#courses">Explore Courses</a>
-    </section>
-
-    <section id="courses">
-      <div class="section-title">
-        <h2>Explore Our Courses</h2>
-        <p>Build useful skills for the digital world.</p>
-      </div>
-      <div class="courses">
-        <article class="card">
-          <div class="emoji">🤖</div>
-          <h3>AI Skills</h3>
-          <p>Discover AI tools and learn how to use them in your daily work.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🎬</div>
-          <h3>Video Editing</h3>
-          <p>Learn the basics of creating engaging videos and short-form content.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🎨</div>
-          <h3>Canva Design</h3>
-          <p>Create attractive social media graphics and digital designs.</p>
-        </article>
-        <article class="card">
-          <div class="emoji">📈</div>
-          <h3>Affiliate Marketing</h3>
-          <p>Understand referrals, genuine sales and ethical online promotion.</p>
-        </article>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">YOUR DIGITAL LEARNING JOURNEY STARTS HERE</span>
+          <h1>Learn New Skills.<br>Build Your <span>Future.</span></h1>
+          <p>Explore digital skills, creative tools and affiliate marketing training with Skill Nova Nepal. Choose a learning plan that fits your goals.</p>
+          <div class="hero-actions">
+            <a class="button" href="#plans">Explore Our Plans →</a>
+            <a class="button button-light" href="#benefits">Discover More</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Skills for a Digital World</h2>
+          <p>Learn at your pace and develop practical skills for your next opportunity.</p>
+          <div class="skill-list">
+            <div class="skill"><b>✦</b>Digital Marketing</div>
+            <div class="skill"><b>▶</b>Video Editing</div>
+            <div class="skill"><b>◇</b>AI Tools</div>
+            <div class="skill"><b>↗</b>Content Creation</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="section-title">
-        <h2>Learn at Your Own Pace</h2>
+    <section id="plans">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Choose Your Learning Plan</h2>
+          <p>Explore our plans and find the skills you want to learn next.</p>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <span class="plan-tag">Start Learning</span>
+            <h3>Short Plan</h3>
+            <div class="old-price"><del>NPR 999</del></div>
+            <div class="price">NPR 699</div>
+            <div class="vat">13% VAT included</div>
+            <ul>
+              <li>Communication Skills</li>
+              <li>Affiliate Marketing</li>
+              <li>Personality Development</li>
+            </ul>
+            <button class="button" onclick="choosePlan('Short Plan','699')">Buy Now</button>
+          </article>
+
+          <article class="plan">
+            <span class="plan-tag">Build Your Skills</span>
+            <h3>Medium Plan</h3>
+            <div class="old-price"><del>NPR 2,499</del></div>
+            <div class="price">NPR 1,899</div>
+            <div class="vat">13% VAT included</div>
+            <ul>
+              <li>Communication Skills</li>
+              <li>Affiliate Marketing</li>
+              <li>Personality Development</li>
+              <li>CapCut Video Editing</li>
+              <li>Canva Design Mastery</li>
+              <li>Professional Video Editing: Basic to Advanced</li>
+            </ul>
+            <button class="button" onclick="choosePlan('Medium Plan','1899')">Buy Now</button>
+          </article>
+
+          <article class="plan featured">
+            <span class="plan-tag">More Skills</span>
+            <h3>Large Plan</h3>
+            <div class="old-price"><del>NPR 3,499</del></div>
+            <div class="price">NPR 2,899</div>
+            <div class="vat">13% VAT included</div>
+            <ul>
+              <li>Communication Skills</li>
+              <li>Affiliate Marketing</li>
+              <li>Personality Development</li>
+              <li>CapCut Video Editing</li>
+              <li>Canva Design Mastery</li>
+              <li>Professional Video Editing: Basic to Advanced</li>
+              <li>AI Tools</li>
+              <li>Daraz Affiliate</li>
+              <li>Live Classes & Support</li>
+            </ul>
+            <button class="button" onclick="choosePlan('Large Plan','2899')">Buy Now</button>
+          </article>
+
+          <article class="plan">
+            <span class="plan-tag">Full Learning Bundle</span>
+            <h3>High Plan</h3>
+            <div class="old-price"><del>NPR 7,599</del></div>
+            <div class="price">NPR 5,899</div>
+            <div class="vat">13% VAT included</div>
+            <ul>
+              <li>Communication Skills</li>
+              <li>Affiliate Marketing</li>
+              <li>Personality Development</li>
+              <li>CapCut Video Editing</li>
+              <li>Canva Design Mastery</li>
+              <li>Professional Video Editing: Basic to Advanced</li>
+              <li>AI Tools</li>
+              <li>Daraz Affiliate</li>
+              <li>Live Classes & Support</li>
+              <li>MeroShare</li>
+              <li>YouTube Mastery</li>
+            </ul>
+            <button class="button" onclick="choosePlan('High Plan','5899')">Buy Now</button>
+          </article>
+        </div>
+        <p class="note">Course access and purchase confirmation will be provided through the official platform once the payment system is configured.</p>
       </div>
-      <p>
-        Our goal is to make digital learning clear and accessible.
-        Course details and package prices will be added before launch.
-      </p>
     </section>
 
-    <section id="join">
-      <div class="section-title">
-        <h2>Start Your Learning Journey</h2>
-        <p>Member registration and course access will be connected in a later step.</p>
+    <section class="benefits" id="benefits">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why Skill Nova Nepal?</h2>
+          <p>A learning-focused platform for people who want to build practical digital skills.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit">
+            <div class="icon">📚</div>
+            <h3>Learn Useful Skills</h3>
+            <p>Explore topics in communication, design, editing and digital marketing.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon">💻</div>
+            <h3>Digital-First Learning</h3>
+            <p>Discover tools and techniques used in today's digital environment.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon">🤝</div>
+            <h3>Affiliate Learning</h3>
+            <p>Understand referral marketing and how direct referrals can work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to Start Your Learning Journey?</h2>
+          <p>Choose a plan and take the next step with Skill Nova Nepal.</p>
+          <a class="button button-light" href="#plans">View All Plans</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Digital Course Platform. All rights reserved.</p>
-    <p>Learn honestly. Grow your digital skills.</p>
+    <div class="container footer-row">
+      <div>
+        <a class="brand" href="#">Skill Nova <span>Nepal</span></a>
+        <p>Learn. Grow. Build your digital future.</p>
+      </div>
+      <div>
+        <p>© 2026 Skill Nova Nepal</p>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    function choosePlan(name, price) {
+      alert(
+        name + " selected.\nPrice: NPR " + price +
+        "\n\nOnline payment and enrollment are not connected yet. Please check back after setup."
+      );
+    }
+  </script>
 </body>
 </html>
