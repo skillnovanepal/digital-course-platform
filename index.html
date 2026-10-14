@@ -1,463 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071a3d">
-<meta name="description" content="Explore digital learning plans and practical skills with Skill Nova Nepal.">
-<title>Skill Nova Nepal | Learn, Grow, Create</title>
-
+<meta name="theme-color" content="#071b49">
+<title>Skill Nova Nepal | Learn. Grow. Earn.</title>
+<meta name="description" content="Explore practical digital skills and learning plans with Skill Nova Nepal.">
 <style>
-:root{
-  --navy:#071a3d;
-  --blue:#1458db;
-  --cyan:#54d5f2;
-  --light:#f3f7ff;
-  --text:#17243b;
-  --muted:#64728a;
-  --white:#fff;
-  --border:#e0e8f5;
-  --shadow:0 14px 40px rgba(7,26,61,.09);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.65;background:#fff}
-a{text-decoration:none;color:inherit}
-button,input,textarea{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1160px,92%);margin:auto}
-.section{padding:82px 0}
-.section-head{text-align:center;max-width:700px;margin:0 auto 42px}
-.eyebrow{display:inline-block;color:var(--blue);font-weight:800;font-size:12px;letter-spacing:2px;margin-bottom:12px}
-.section-head h2,.about-copy h2,.contact-copy h2{font-size:clamp(29px,4vw,43px);line-height:1.2;color:var(--navy);margin-bottom:13px}
-.section-head h2 span,.about-copy h2 span,.contact-copy h2 span{color:var(--blue)}
-.section-head p{color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:.2s}
-.btn-primary{background:var(--blue);color:white;box-shadow:0 8px 20px #1458db30}
-.btn-primary:hover{background:#0d43b4;transform:translateY(-2px)}
-.btn-light{border-color:#cdd9ee;color:var(--navy);background:#fff}
-.btn-light:hover{border-color:var(--blue);color:var(--blue)}
-/* NAVIGATION */
-.header{position:sticky;top:0;z-index:50;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;color:var(--navy)}
-.brand b{color:var(--blue)}
-.brand-icon{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#1458db,#54d5f2);display:grid;place-items:center;color:#fff;font-size:26px;font-weight:900;box-shadow:0 6px 14px #1458db35}
-.nav-links{display:flex;align-items:center;gap:25px}
-.nav-links a{font-size:14px;font-weight:700;color:#3b4962}
-.nav-links a:hover{color:var(--blue)}
-.menu-toggle{display:none;border:0;background:var(--light);border-radius:8px;padding:8px 12px;font-size:23px;color:var(--navy);cursor:pointer}
-/* HERO */
-.hero{background:radial-gradient(ellipse at 80% 15%,#163d7a 0%,transparent 42%),linear-gradient(125deg,#071a3d,#0b2d65);color:white;padding:76px 0 84px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:52px}
-.hero .eyebrow{color:var(--cyan)}
-.hero h1{font-size:clamp(39px,5.2vw,62px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:23px}
-.hero h1 span{color:var(--cyan)}
-.hero-copy>p{max-width:520px;color:#d1def4;font-size:17px;margin-bottom:27px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero .btn-light{background:transparent;color:white;border-color:#8197bc}
-.hero .btn-light:hover{background:#ffffff12}
-.hero-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#dbe8ff;font-size:12px}
-.hero-points span:before{content:"✓";color:var(--cyan);font-weight:bold;margin-right:6px}
-.hero-art{position:relative;padding:12px}
-.hero-photo{width:100%;height:365px;object-fit:cover;border-radius:25px;border:1px solid #ffffff45;box-shadow:0 25px 60px #0005}
-.float-box{position:absolute;background:white;color:var(--navy);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
-.float-box strong{display:block;font-size:13px}
-.float-box small{display:block;color:var(--muted);font-size:11px}
-.float-symbol{width:39px;height:39px;border-radius:11px;background:#e9f3ff;color:var(--blue);display:grid;place-items:center;font-size:22px}
-.float-one{top:35px;left:-15px}
-.float-two{bottom:28px;right:-8px}
-/* TRUST STRIP */
-.trust{padding:24px 0;background:#fff;border-bottom:1px solid var(--border)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.trust-item{display:flex;align-items:center;justify-content:center;gap:12px}
-.trust-icon{font-size:25px;color:var(--blue)}
-.trust-item strong{display:block;font-size:14px}
-.trust-item small{color:var(--muted);font-size:12px}
-/* PLANS */
-.plans-section{background:var(--light)}
-.plans-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
-.plan-card{position:relative;background:white;border:1px solid var(--border);border-radius:19px;padding:23px 20px;display:flex;flex-direction:column;box-shadow:0 6px 22px #071a3d07;transition:.25s}
-.plan-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.plan-card.featured{border:2px solid var(--blue);box-shadow:0 15px 38px #1458db16}
-.popular{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--blue);color:white;border-radius:30px;padding:5px 13px;font-size:10px;letter-spacing:1px;font-weight:800}
-.plan-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:19px}
-.plan-letter{width:56px;height:56px;display:grid;place-items:center;background:linear-gradient(145deg,#0b2552,#1458db);color:white;border-radius:13px;font-size:32px;font-weight:900;box-shadow:5px 6px 0 #b9d0ff;transform:translateY(-2px)}
-.plan-type{font-size:9px;letter-spacing:1px;font-weight:800;color:var(--blue);background:#edf4ff;border-radius:30px;padding:5px 8px}
-.plan-card h3{font-size:20px;color:var(--navy);margin-bottom:5px}
-.plan-desc{font-size:12px;color:var(--muted);min-height:57px}
-.price{margin:16px 0 0}
-.price del{display:block;color:#8994a7;font-size:13px}
-.price strong{display:block;font-size:27px;color:var(--navy);letter-spacing:-.5px}
-.price small{font-size:12px;font-weight:500}
-.vat{font-size:11px;color:#27865c;margin-top:1px}
-.plan-features{list-style:none;margin:20px 0 23px;flex:1}
-.plan-features li{font-size:12px;padding:8px 0;border-bottom:1px solid #edf1f8;color:#42506a}
-.plan-features li:before{content:"✓";color:#138c65;font-weight:900;margin-right:8px}
-.plan-card .btn{width:100%;font-size:12px;padding:12px 8px}
-.note{font-size:11px;color:var(--muted);text-align:center;margin-top:22px}
-/* COURSES */
-.courses-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.course-card{border:1px solid var(--border);border-radius:17px;overflow:hidden;background:white;transition:.25s}
-.course-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.course-card img{width:100%;height:175px;object-fit:cover;background:#e6eefb}
-.course-body{padding:20px}
-.course-tag{font-size:10px;letter-spacing:1px;font-weight:800;color:var(--blue)}
-.course-body h3{font-size:17px;color:var(--navy);margin:8px 0}
-.course-body p{font-size:13px;color:var(--muted);margin-bottom:16px}
-.course-body a{font-size:12px;color:var(--blue);font-weight:800}
-.center{text-align:center;margin-top:32px}
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.about-photo-wrap{position:relative}
-.about-photo{width:100%;height:390px;object-fit:cover;border-radius:23px}
-.about-badge{position:absolute;right:-15px;bottom:24px;background:var(--navy);color:white;padding:18px 23px;border-radius:14px;box-shadow:var(--shadow)}
-.about-badge strong{display:block;font-size:24px;color:var(--cyan)}
-.about-badge small{font-size:11px}
-.about-copy p{color:var(--muted);margin:15px 0}
-.about-checks{list-style:none;margin:22px 0}
-.about-checks li{margin:10px 0;font-size:14px;font-weight:700}
-.about-checks li:before{content:"✓";color:var(--blue);margin-right:10px}
-/* WHY */
-.why-section{background:var(--light)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.why-card{background:#fff;padding:27px;border-radius:16px;border:1px solid var(--border)}
-.why-number{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;background:#eaf2ff;color:var(--blue);font-weight:900;margin-bottom:18px}
-.why-card h3{font-size:18px;color:var(--navy);margin-bottom:9px}
-.why-card p{font-size:13px;color:var(--muted)}
-/* FAQ */
-.faq-wrap{max-width:820px;margin:auto}
-.faq-item{border:1px solid var(--border);border-radius:12px;padding:0 19px;margin:12px 0;background:white}
-.faq-item summary{padding:17px 25px 17px 0;font-weight:700;font-size:14px;cursor:pointer;color:var(--navy);position:relative;list-style:none}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary:after{content:"+";position:absolute;right:0;color:var(--blue);font-size:22px;top:10px}
-.faq-item[open] summary:after{content:"−"}
-.faq-item p{font-size:13px;color:var(--muted);padding:0 0 18px}
-/* CONTACT */
-.contact-section{background:var(--navy);color:white}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:start}
-.contact-copy .eyebrow{color:var(--cyan)}
-.contact-copy h2{color:white}
-.contact-copy h2 span{color:var(--cyan)}
-.contact-copy>p{color:#c7d5ed;margin:15px 0 28px}
-.contact-line{display:flex;gap:13px;margin:18px 0;align-items:center}
-.contact-icon{width:43px;height:43px;display:grid;place-items:center;background:#ffffff13;border:1px solid #ffffff24;border-radius:12px;color:var(--cyan);font-size:20px}
-.contact-line strong{display:block;font-size:13px}
-.contact-line small{color:#c7d5ed;font-size:12px}
-.contact-form{background:white;color:var(--text);padding:29px;border-radius:18px}
-.contact-form h3{color:var(--navy);font-size:23px;margin-bottom:20px}
-.contact-form label{display:block;font-size:12px;font-weight:700;margin:13px 0 6px}
-.contact-form input,.contact-form textarea{width:100%;padding:12px;border:1px solid #dce4f0;border-radius:9px;outline:none;background:#fbfcff}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--blue)}
-.contact-form textarea{resize:vertical}
-.contact-form .btn{width:100%;margin-top:15px}
-.form-note,.form-status{font-size:11px;color:var(--muted);margin-top:12px}
-/* FOOTER */
-.footer{background:#04122b;color:#c6d2e6;padding:53px 0 0}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;padding-bottom:40px}
-.footer .brand{color:white}
-.footer-about p{font-size:13px;color:#aab9d3;max-width:280px;margin-top:15px}
-.footer h4{color:white;font-size:14px;margin-bottom:14px}
-.footer-links a{display:block;color:#aab9d3;font-size:12px;margin:9px 0}
-.footer-links a:hover{color:var(--cyan)}
-.footer-bottom{border-top:1px solid #ffffff19;padding:18px 0;font-size:11px;color:#aab9d3}
-.footer-bottom-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.policy{background:#f7f9fd;padding:22px 0;border-bottom:1px solid var(--border)}
-.policy h3{font-size:16px;color:var(--navy);margin-bottom:6px}
-.policy p{font-size:12px;color:var(--muted)}
-/* RESPONSIVE */
-@media(max-width:1000px){
- .plans-grid,.courses-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .hero-grid{gap:28px}
- .hero h1{font-size:46px}
- .footer-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:760px){
- .section{padding:60px 0}
- .nav{height:68px}
- .menu-toggle{display:block}
- .nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:20px 5%;background:white;border-bottom:1px solid var(--border);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
- .nav-links.open{display:flex}
- .nav-links a{padding:12px 0;border-bottom:1px solid #edf1f8}
- .nav-links .btn{margin-top:12px}
- .hero{padding:55px 0}
- .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
- .hero h1{font-size:clamp(38px,10vw,52px)}
- .hero-photo{height:280px}
- .float-one{left:0}
- .float-two{right:0}
- .trust-grid{grid-template-columns:1fr;gap:17px}
- .trust-item{justify-content:flex-start}
- .about-grid{gap:35px}
- .about-photo{height:300px}
- .about-badge{right:8px}
- .why-grid{grid-template-columns:1fr}
- .contact-grid{gap:30px}
- .contact-form{padding:22px}
-}
-@media(max-width:480px){
- .brand{font-size:16px}
- .brand-icon{width:38px;height:38px}
- .plans-grid,.courses-grid{grid-template-columns:1fr}
- .plan-card{padding:24px}
- .plan-desc{min-height:0}
- .course-card img{height:200px}
- .hero-actions .btn{width:100%}
- .hero-points{gap:10px}
- .footer-grid{grid-template-columns:1fr 1fr;gap:25px}
- .footer-about{grid-column:1/-1}
- .section-head{margin-bottom:30px}
-}
+:root{--navy:#071b49;--blue:#1759e8;--gold:#ffc83d;--light:#f4f7ff;--text:#14264a;--muted:#63718b}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:85px}body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.container{width:min(1160px,92%);margin:auto}
+header{height:76px;background:#fffffffa;display:flex;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 3px 18px #071b4910}.navbar{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.logo{width:44px;height:44px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#2f82ff,#102d6c);border-radius:13px;font-size:27px;font-weight:900;box-shadow:0 4px 0 #0a245c}.brand-name{font-size:19px;font-weight:800;color:var(--navy);line-height:1.2}.brand-tag{font-size:11px;color:var(--muted);letter-spacing:.6px}.desktop-links{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:700}.desktop-links a:hover{color:var(--blue)}.menu-button{width:45px;height:45px;border:1px solid #e0e7f3;background:#fff;border-radius:12px;display:grid;place-items:center;color:var(--navy);font-size:26px;flex-shrink:0}.mobile-menu{display:none;position:absolute;top:76px;right:4%;width:min(310px,92vw);background:#fff;padding:13px;border:1px solid #e6ebf5;border-radius:18px;box-shadow:0 18px 45px #071b4926}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:12px 14px;border-radius:10px;font-weight:700;font-size:15px}.mobile-menu a:hover{background:var(--light);color:var(--blue)}.mobile-menu .login-link{background:var(--navy);color:#fff;text-align:center;margin-top:8px}.login-section{background:var(--light);min-height:70vh}.auth-card{max-width:460px;margin:10px auto;background:#fff;padding:34px;border:1px solid #e4eaf5;border-radius:24px;box-shadow:0 18px 45px #071b4912}.auth-logo{width:52px;height:52px;margin:0 auto 15px;display:grid;place-items:center;background:linear-gradient(145deg,#2f82ff,#102d6c);color:#fff;border-radius:15px;font-size:30px;font-weight:900}.auth-card h2{text-align:center;color:var(--navy);font-size:29px}.auth-subtitle{text-align:center;color:var(--muted);margin:5px 0 24px}.auth-card label{display:block;font-weight:700;font-size:14px;margin:13px 0 6px}.auth-card input{width:100%;padding:13px 14px;border:1px solid #dce4f2;border-radius:11px;font:inherit;outline-color:var(--blue)}.auth-submit{width:100%;justify-content:center;margin-top:20px;border:0}.auth-switch{text-align:center;margin-top:18px;font-size:14px;color:var(--muted)}.auth-switch button{background:none;border:0;color:var(--blue);font-weight:800}.auth-note{margin-top:20px;text-align:center;font-size:12px;color:var(--muted)}
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(105deg,#071b49 0%,#102d6c 50%,#10234a 100%)}.hero-grid{min-height:440px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px}.hero-copy{padding:52px 0;position:relative;z-index:2}.eyebrow{display:inline-block;padding:7px 15px;border-radius:99px;background:#ffffff18;border:1px solid #ffffff2b;color:#ffdc78;font-size:13px;font-weight:700;margin-bottom:18px}.hero h1{font-size:clamp(35px,4.5vw,57px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:19px}.hero h1 span{color:var(--gold)}.hero-copy p{max-width:500px;color:#e0e8ff;font-size:16px;margin-bottom:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:12px;font-weight:800;border:0;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px #0002}.btn-gold{background:var(--gold);color:var(--navy)}.btn-blue{background:var(--blue);color:#fff}.hero-image{min-height:390px;align-self:stretch;position:relative;background:linear-gradient(90deg,#102d6c18,#071b4900),url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1100&q=85") center/cover no-repeat;border-radius:0 0 0 95px}.image-note{position:absolute;right:18px;bottom:20px;background:#fff;color:var(--navy);border-radius:15px;padding:13px 17px;box-shadow:0 10px 30px #0002;font-size:13px;font-weight:800}.image-note span{display:block;color:var(--muted);font-weight:500}
+.benefit-strip{background:#f3f6ff;border-bottom:1px solid #e5ebf8}.benefits{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:25px 0}.benefit{text-align:center;padding:6px}.benefit-icon{width:46px;height:46px;margin:0 auto 8px;display:grid;place-items:center;border-radius:15px;color:#fff;background:linear-gradient(135deg,#2f82ff,#563be8);font-size:21px}.benefit strong{display:block;font-size:13px}.benefit small{display:block;color:var(--muted);font-size:11px}.stats{background:linear-gradient(110deg,#071b49,#123a83);color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:27px 0;text-align:center}.stat strong{display:block;color:var(--gold);font-size:clamp(27px,3vw,38px);line-height:1.25}.stat span{font-size:13px;color:#e0e8ff}
+.section{padding:70px 0}.section-heading{text-align:center;max-width:690px;margin:0 auto 32px}.kicker{color:var(--blue);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.section-heading h2{color:var(--navy);font-size:clamp(28px,3.4vw,39px);line-height:1.2;margin:8px 0 12px}.section-heading p{color:var(--muted);font-size:15px}.plans-section{background:linear-gradient(180deg,#fff,#f4f7ff)}.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch;max-width:1000px;margin:auto}
+.plan{color:#fff;border-radius:19px;padding:20px 22px 19px;position:relative;overflow:hidden;box-shadow:0 6px 0 #0b245b,0 13px 25px #102b6020;display:grid;grid-template-columns:82px minmax(0,1fr);column-gap:18px;align-items:start;min-width:0;transition:transform .2s,box-shadow .2s;border:1px solid #ffffff35}.plan:hover{transform:translateY(-4px);box-shadow:0 8px 0 #0b245b,0 20px 32px #102b6030}.plan::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid #ffffff24;right:-65px;top:65px;box-shadow:0 0 0 22px #ffffff08,0 0 0 45px #ffffff06;pointer-events:none}.plan.short{background:linear-gradient(145deg,#258bff,#1738d7 72%,#101c9d)}.plan.medium{background:linear-gradient(145deg,#237bff,#1545ba 72%,#0b286d)}.plan.large{background:linear-gradient(145deg,#286fe5,#1738a0 72%,#101b60)}.plan.high{background:linear-gradient(145deg,#102d6c,#071b49 72%,#04102d)}.popular{position:absolute;right:12px;top:12px;z-index:2;background:var(--gold);color:#19264a;font-size:10px;font-weight:900;border-radius:99px;padding:5px 9px}.pass-letter{width:78px;height:94px;border:1px solid #ffffff70;border-radius:14px;display:grid;place-items:center;font-size:43px;font-weight:900;margin:4px 0 0;background:linear-gradient(145deg,#8bc2ff40,#ffffff10);box-shadow:0 5px 0 #061747,0 9px 15px #06174755,inset 0 2px 3px #ffffff55,inset 0 -4px 7px #06174740;text-shadow:0 2px 3px #0005;grid-row:1/span 5}.plan-content{min-width:0;position:relative;z-index:1}.plan h3{font-size:23px;line-height:1.2;margin:4px 0 9px;padding-right:65px}.plan ul{list-style:none;margin:0 0 12px}.plan li{font-size:13px;line-height:1.45;margin:6px 0;position:relative;padding-left:19px}.plan li::before{content:"✓";position:absolute;left:0;font-weight:900;color:#ffdc78}.price-old{font-size:12px;color:#ffffffb5;text-decoration:line-through}.price{font-size:27px;font-weight:900;line-height:1.3;white-space:nowrap}.vat{font-size:10px;margin-top:6px;display:inline-block;background:#ffffffd9;color:#19325c;padding:3px 8px;border-radius:7px}.plan .btn{margin-top:13px;background:#fff;color:var(--navy);padding:10px 15px;font-size:13px;position:relative;z-index:2;box-shadow:0 3px 0 #061747}.plan-note{text-align:center;font-size:12px;color:var(--muted);margin-top:18px}
+.courses-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.course-card{border:1px solid #e0e7f3;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 24px #102b600b;transition:transform .2s,box-shadow .2s}.course-card:hover{transform:translateY(-4px);box-shadow:0 15px 30px #102b6017}.course-art{min-height:125px;display:grid;place-items:center;color:#fff;font-size:23px;font-weight:900;letter-spacing:.5px;text-align:center;padding:15px}.course-art.ai{background:linear-gradient(135deg,#102d6c,#7148e8)}.course-art.design{background:linear-gradient(135deg,#1759e8,#21a7db)}.course-art.video{background:linear-gradient(135deg,#2457bd,#d92e73)}.course-art.communication{background:linear-gradient(135deg,#0b7d99,#1759e8)}.course-content{padding:16px}.course-content h3{color:var(--navy);font-size:16px;margin-bottom:5px}.course-content p{color:var(--muted);font-size:12px}.course-label{display:inline-block;margin-top:10px;color:var(--blue);font-size:12px;font-weight:800}
+.about-section{background:#f4f7ff}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}.about-copy h2{font-size:clamp(28px,3vw,37px);color:var(--navy);line-height:1.2;margin:9px 0 16px}.about-copy p{color:var(--muted);margin-bottom:20px}.about-visual{min-height:290px;border-radius:28px;padding:28px;background:linear-gradient(135deg,#dce8ff,#fff 55%,#e3f0ff);display:grid;place-items:center;text-align:center;border:1px solid #e0e9fa}.about-symbol{font-size:72px}.about-visual h3{color:var(--navy);font-size:24px}.about-visual p{color:var(--muted);font-size:14px}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.why-card{padding:23px 19px;border:1px solid #e5eaf4;border-radius:18px;background:#fff}.why-card .benefit-icon{margin:0 0 15px}.why-card h3{font-size:16px;color:var(--navy);margin-bottom:7px}.why-card p{font-size:13px;color:var(--muted)}
+.contact-band{background:var(--navy);color:#fff;padding:38px 0}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}.contact-inner h2{font-size:clamp(23px,3vw,32px);margin-bottom:6px}.contact-inner p{color:#c8d6f4;font-size:14px}footer{background:#041334;color:#fff;padding:35px 0 20px}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#d4def4}.footer-links a:hover{color:var(--gold)}.footer-bottom{margin-top:24px;padding-top:17px;border-top:1px solid #ffffff20;color:#aebbd6;font-size:12px;text-align:center}.whatsapp-help{position:fixed;left:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:10px;padding:10px 17px 10px 11px;border-radius:99px;background:#13a85b;color:#fff;box-shadow:0 8px 24px #0a703c40;font-size:13px;font-weight:800}.whatsapp-icon{width:36px;height:36px;border-radius:50%;border:2px solid #ffffffc9;display:grid;place-items:center;font-size:19px}.whatsapp-help small{display:block;font-size:10px;font-weight:500;opacity:.9}.back-top{position:fixed;right:18px;bottom:20px;z-index:80;width:42px;height:42px;border:0;border-radius:13px;background:var(--blue);color:#fff;font-size:21px;box-shadow:0 6px 20px #071b4930}
+@media(max-width:950px){.desktop-links{display:none}.plans{gap:16px}.plan{grid-template-columns:66px minmax(0,1fr);padding:18px 16px;column-gap:14px}.pass-letter{width:64px;height:82px;font-size:37px}.plan h3{font-size:20px}.courses-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.why-grid{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){header{height:68px}.brand-name{font-size:16px}.brand-tag{font-size:10px}.logo{width:39px;height:39px;font-size:24px}.menu-button{width:42px;height:42px}.mobile-menu{top:68px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{padding:42px 0 27px}.hero h1{font-size:39px}.hero-copy p{font-size:14px}.hero-image{min-height:260px;border-radius:22px 22px 0 0}.benefits{grid-template-columns:repeat(2,1fr);gap:17px 8px}.stats-grid{grid-template-columns:1fr;gap:15px;padding:22px 0}.section{padding:49px 0}.section-heading{margin-bottom:25px}.plans{grid-template-columns:1fr;gap:17px}.plan{grid-template-columns:62px minmax(0,1fr);padding:17px 15px;column-gap:13px}.pass-letter{width:59px;height:78px;font-size:34px}.plan h3{font-size:20px;padding-right:50px}.plan li{font-size:12px}.price{font-size:25px}.courses-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.course-art{min-height:100px;font-size:17px}.course-content{padding:12px}.course-content h3{font-size:14px}.course-content p{font-size:11px}.about-grid{grid-template-columns:1fr;gap:25px}.about-visual{min-height:220px}.why-grid{grid-template-columns:1fr 1fr;gap:12px}.why-card{padding:17px 13px}.contact-inner{flex-direction:column;align-items:flex-start}.footer-top{align-items:flex-start;flex-direction:column}.footer-links{gap:13px}.whatsapp-help{left:10px;bottom:10px;padding:7px 12px 7px 8px}.whatsapp-icon{width:32px;height:32px}.back-top{right:10px;bottom:13px}}
+@media(max-width:370px){.plan{grid-template-columns:52px minmax(0,1fr);padding:15px 11px;gap:10px}.pass-letter{width:50px;height:70px;font-size:30px}.plan h3{font-size:18px}.courses-grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
-<header class="header">
- <div class="container nav">
-  <a class="brand" href="#home"><span class="brand-icon">S</span><span>Skill Nova <b>Nepal</b></span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  <nav class="nav-links" id="navLinks">
-   <a href="#home">Home</a>
-   <a href="#plans">Our Plans</a>
-   <a href="#courses">Courses</a>
-   <a href="#about">About Us</a>
-   <a href="#faq">FAQ</a>
-   <a href="#contact" class="btn btn-primary">Contact Us ↗</a>
-  </nav>
- </div>
-</header>
-
+<header><div class="container navbar">
+<a class="brand" href="#home" aria-label="Skill Nova Nepal Home"><span class="logo">S</span><span><span class="brand-name">Skill Nova Nepal</span><br><span class="brand-tag">Learn · Grow · Earn</span></span></a>
+<nav class="desktop-links" aria-label="Main navigation"><a href="#home">Home</a><a href="#plans">Our Plans</a><a href="#courses">Courses</a><a href="#about">About Us</a><a href="#contact">Contact Us</a><a href="#faq">FAQ</a></nav>
+<button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="#home">Home</a><a href="#plans">Our Plans</a><a href="#courses">Courses</a><a href="#about">About Us</a><a href="#contact">Contact Us</a><a href="#faq">FAQ</a><a href="#login" class="login-link">Login →</a></nav>
+</div></header>
 <main>
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div class="hero-copy">
-   <span class="eyebrow">LEARN • GROW • CREATE</span>
-   <h1>Build Your Skills.<br><span>Shape Your Future.</span></h1>
-   <p>Explore practical digital skills, discover creative tools, and take your next step with Skill Nova Nepal.</p>
-   <div class="hero-actions">
-    <a class="btn btn-primary" href="#plans">Explore Our Plans →</a>
-    <a class="btn btn-light" href="#courses">Discover Skills</a>
-   </div>
-   <div class="hero-points"><span>Practical learning</span><span>Multiple skill areas</span></div>
-  </div>
-  <div class="hero-art">
-   <img class="hero-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85" alt="Students learning together">
-   <div class="float-box float-one"><span class="float-symbol">✦</span><div><strong>Discover New Skills</strong><small>Keep learning every day</small></div></div>
-   <div class="float-box float-two"><span class="float-symbol">↗</span><div><strong>Your Next Step</strong><small>Start with a clear plan</small></div></div>
-  </div>
- </div>
-</section>
-
-<section class="trust">
- <div class="container trust-grid">
-  <div class="trust-item"><span class="trust-icon">◎</span><div><strong>Skill-Focused Learning</strong><small>Explore useful skill areas</small></div></div>
-  <div class="trust-item"><span class="trust-icon">◇</span><div><strong>Flexible Plan Options</strong><small>Compare the listed packages</small></div></div>
-  <div class="trust-item"><span class="trust-icon">↗</span><div><strong>Keep Growing</strong><small>Build skills step by step</small></div></div>
- </div>
-</section>
-
-<section class="section plans-section" id="plans">
- <div class="container">
-  <div class="section-head">
-   <span class="eyebrow">CHOOSE YOUR LEARNING PATH</span>
-   <h2>Our Popular <span>Plans</span></h2>
-   <p>Choose a learning package based on your interests and goals.</p>
-  </div>
-  <div class="plans-grid">
-   <article class="plan-card">
-    <div class="plan-top"><div class="plan-letter">S</div><span class="plan-type">STARTER</span></div>
-    <h3>Short Plan</h3><p class="plan-desc">Start with essential personal and digital skills.</p>
-    <div class="price"><del>NPR 999</del><strong>NPR 699</strong></div>
-    <p class="vat">13% VAT included — confirm before launch</p>
-    <ul class="plan-features"><li>Communication Skills</li><li>Affiliate Marketing</li><li>Personality Development</li></ul>
-    <a class="btn btn-light" href="#contact">Choose Short Plan →</a>
-   </article>
-
-   <article class="plan-card featured">
-    <span class="popular">POPULAR CHOICE</span>
-    <div class="plan-top"><div class="plan-letter">M</div><span class="plan-type">GROWTH</span></div>
-    <h3>Medium Plan</h3><p class="plan-desc">Explore communication, design, and editing.</p>
-    <div class="price"><del>NPR 2,499</del><strong>NPR 1,899</strong></div>
-    <p class="vat">Confirm applicable VAT before launch</p>
-    <ul class="plan-features"><li>Everything in Short Plan</li><li>CapCut Video Editing</li><li>Canva Design Mastery</li><li>Professional Video Editing</li></ul>
-    <a class="btn btn-primary" href="#contact">Choose Medium Plan →</a>
-   </article>
-
-   <article class="plan-card">
-    <div class="plan-top"><div class="plan-letter">L</div><span class="plan-type">ADVANCED</span></div>
-    <h3>Large Plan</h3><p class="plan-desc">Explore more digital tools and learning topics.</p>
-    <div class="price"><del>NPR 3,499</del><strong>NPR 2,899</strong></div>
-    <p class="vat">Confirm applicable VAT before launch</p>
-    <ul class="plan-features"><li>Everything in Medium Plan</li><li>AI Tools Introduction</li><li>Daraz Affiliate Basics</li><li>Live Classes & Support</li></ul>
-    <a class="btn btn-light" href="#contact">Choose Large Plan →</a>
-   </article>
-
-   <article class="plan-card">
-    <div class="plan-top"><div class="plan-letter">H</div><span class="plan-type">PREMIUM</span></div>
-    <h3>High Plan</h3><p class="plan-desc">Discover an expanded range of digital topics.</p>
-    <div class="price"><del>NPR 7,599</del><strong>NPR 5,899</strong></div>
-    <p class="vat">Confirm applicable VAT before launch</p>
-    <ul class="plan-features"><li>Everything in Large Plan</li><li>MeroShare Basics</li><li>YouTube Mastery</li><li>Expanded Learning Topics</li></ul>
-    <a class="btn btn-light" href="#contact">Choose High Plan →</a>
-   </article>
-  </div>
-  <p class="note">Prices and package contents are draft information. Confirm the final terms, VAT, and course availability before accepting payments.</p>
- </div>
-</section>
-
-<section class="section" id="courses">
- <div class="container">
-  <div class="section-head">
-   <span class="eyebrow">EXPLORE YOUR POTENTIAL</span>
-   <h2>Skills for Your <span>Next Step</span></h2>
-   <p>Discover some of the learning topics featured in our packages.</p>
-  </div>
-  <div class="courses-grid">
-   <article class="course-card">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=80" alt="Team communication">
-    <div class="course-body"><span class="course-tag">PERSONAL GROWTH</span><h3>Communication Skills</h3><p>Explore communication, confidence, and collaboration basics.</p><a href="#plans">View learning plans →</a></div>
-   </article>
-   <article class="course-card">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=700&q=80" alt="Digital marketing workspace">
-    <div class="course-body"><span class="course-tag">DIGITAL BUSINESS</span><h3>Affiliate Marketing</h3><p>Understand referrals, online promotion, and content basics.</p><a href="#plans">View learning plans →</a></div>
-   </article>
-   <article class="course-card">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80" alt="Video editing equipment">
-    <div class="course-body"><span class="course-tag">CREATIVE SKILLS</span><h3>Video Editing</h3><p>Discover workflows for editing short videos and digital content.</p><a href="#plans">View learning plans →</a></div>
-   </article>
-   <article class="course-card">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&w=700&q=80" alt="Graphic design project">
-    <div class="course-body"><span class="course-tag">DESIGN & CREATIVITY</span><h3>Canva Design Mastery</h3><p>Explore visual design for social media and creative projects.</p><a href="#plans">View learning plans →</a></div>
-   </article>
-  </div>
-  <div class="center"><a class="btn btn-primary" href="#plans">Compare All Plans →</a></div>
- </div>
-</section>
-
-<section class="section" id="about">
- <div class="container about-grid">
-  <div class="about-photo-wrap">
-   <img loading="lazy" class="about-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="People collaborating on a project">
-   <div class="about-badge"><strong>SKILL NOVA</strong><small>NEPAL • LEARN & GROW</small></div>
-  </div>
-  <div class="about-copy">
-   <span class="eyebrow">ABOUT OUR PLATFORM</span>
-   <h2>Learn Today.<br><span>Grow Tomorrow.</span></h2>
-   <p>Skill Nova Nepal aims to make digital learning topics easier to explore through organized learning plans and practical skill areas.</p>
-   <p>Our goal is to help learners understand new tools, develop their abilities, and make informed choices about their learning journey.</p>
-   <ul class="about-checks"><li>Clearly listed learning topics</li><li>Multiple package options</li><li>A focus on continued learning</li></ul>
-   <a class="btn btn-primary" href="#contact">Connect With Us →</a>
-  </div>
- </div>
-</section>
-
-<section class="section why-section">
- <div class="container">
-  <div class="section-head"><span class="eyebrow">WHY SKILL NOVA NEPAL</span><h2>A Clearer Way to <span>Start Learning</span></h2><p>Review the options, understand the topics, and choose what suits you.</p></div>
-  <div class="why-grid">
-   <article class="why-card"><div class="why-number">01</div><h3>Organized Plans</h3><p>Compare the listed learning topics and package prices in one place.</p></article>
-   <article class="why-card"><div class="why-number">02</div><h3>Practical Topics</h3><p>Explore communication, design, editing, and digital business basics.</p></article>
-   <article class="why-card"><div class="why-number">03</div><h3>Room to Progress</h3><p>Start with foundational topics and explore additional skills over time.</p></article>
-  </div>
- </div>
-</section>
-
-<section class="section" id="faq">
- <div class="container">
-  <div class="section-head"><span class="eyebrow">NEED TO KNOW MORE?</span><h2>Frequently Asked <span>Questions</span></h2><p>Some important things to know before choosing a plan.</p></div>
-  <div class="faq-wrap">
-   <details class="faq-item"><summary>What is Skill Nova Nepal?</summary><p>Skill Nova Nepal is a digital learning website concept featuring different skill areas and learning plans.</p></details>
-   <details class="faq-item"><summary>How do I choose a plan?</summary><p>Compare the listed topics and prices. Contact the website owner to confirm the final package details before paying.</p></details>
-   <details class="faq-item"><summary>Will I get course access immediately?</summary><p>Course delivery and access arrangements must be confirmed by the website owner before purchases are accepted.</p></details>
-   <details class="faq-item"><summary>Can I pay through this website now?</summary><p>No. This static website does not currently process payments. A secure payment system must be integrated and tested separately.</p></details>
-   <details class="faq-item"><summary>Are member login and referral commissions active?</summary><p>No. Secure registration, member dashboards, purchase verification, referral tracking, commission calculations, and withdrawals require a backend system.</p></details>
-   <details class="faq-item"><summary>How can I contact Skill Nova Nepal?</summary><p>Use the contact section below. The owner must add a real contact email or connect a working contact service before launch.</p></details>
-  </div>
- </div>
-</section>
-
-<section class="section contact-section" id="contact">
- <div class="container contact-grid">
-  <div class="contact-copy">
-   <span class="eyebrow">LET'S CONNECT</span>
-   <h2>Ready for Your <span>Next Step?</span></h2>
-   <p>Have a question about a learning plan? Prepare a message for Skill Nova Nepal.</p>
-   <div class="contact-line"><span class="contact-icon">✉</span><div><strong>Email</strong><small>Add your official email address before launch.</small></div></div>
-   <div class="contact-line"><span class="contact-icon">⌖</span><div><strong>Location</strong><small>Nepal</small></div></div>
-  </div>
-  <form class="contact-form" id="contactForm">
-   <h3>Send Us a Message</h3>
-   <label for="name">Your Name</label><input id="name" name="name" type="text" placeholder="Enter your name" required>
-   <label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Enter your email" required>
-   <label for="message">Your Message</label><textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
-   <button class="btn btn-primary" type="submit">Prepare Email Message →</button>
-   <p class="form-note">This demo opens your email app if one is configured. It does not send a message automatically.</p>
-   <p class="form-status" id="formStatus" aria-live="polite"></p>
-  </form>
- </div>
-</section>
-</main>
-
-<footer class="footer">
- <div class="container footer-grid">
-  <div class="footer-about">
-   <a class="brand" href="#home"><span class="brand-icon">S</span><span>Skill Nova <b>Nepal</b></span></a>
-   <p>Learn new skills, explore new possibilities, and keep growing with Skill Nova Nepal.</p>
-  </div>
-  <div class="footer-links"><h4>Explore</h4><a href="#plans">Learning Plans</a><a href="#courses">Courses</a><a href="#about">About Us</a></div>
-  <div class="footer-links"><h4>Information</h4><a href="#privacy">Privacy Policy</a><a href="#terms">Terms & Conditions</a><a href="#refund">Refund Policy</a></div>
-  <div class="footer-links"><h4>Help</h4><a href="#contact">Contact Us</a><a href="#faq">Frequently Asked Questions</a></div>
- </div>
- <div class="footer-bottom"><div class="container footer-bottom-inner"><span>© <span id="year"></span> Skill Nova Nepal. All rights reserved.</span><span>Learn • Grow • Create</span></div></div>
-</footer>
-
-<section class="policy" id="privacy"><div class="container"><h3>Privacy Policy</h3><p>Before launch, publish a clear policy explaining what information is collected, why it is needed, how it is protected, and how users can request deletion. Do not collect passwords or payment details through this static page.</p></div></section>
-<section class="policy" id="terms"><div class="container"><h3>Terms & Conditions</h3><p>Before launch, explain course access, acceptable use, pricing, and user responsibilities. Make sure the published terms match the actual services.</p></div></section>
-<section class="policy" id="refund"><div class="container"><h3>Refund Policy</h3><p>Before accepting payments, publish a clear cancellation and refund policy that matches your services and applicable requirements.</p></div></section>
-
+<section class="hero" id="home"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">YOUR SKILLS. YOUR FUTURE.</span><h1>Build In-Demand Skills <span>For a Better Tomorrow</span></h1><p>Discover practical digital skills, learn at your own pace, grow your confidence, and explore new opportunities with Skill Nova Nepal.</p><a class="btn btn-gold" href="#plans">Explore Our Plans <span>→</span></a></div><div class="hero-image" role="img" aria-label="Students learning digital skills with a laptop"><div class="image-note">Learn. Grow. Earn.<span>Your journey starts here.</span></div></div></div></section>
+<section class="benefit-strip" aria-label="Learning benefits"><div class="container benefits"><div class="benefit"><div class="benefit-icon">▶</div><strong>Practical Learning</strong><small>Skills for real life</small></div><div class="benefit"><div class="benefit-icon">▣</div><strong>Flexible Learning</strong><small>Learn at your pace</small></div><div class="benefit"><div class="benefit-icon">✦</div><strong>Skill Development</strong><small>Keep improving</small></div><div class="benefit"><div class="benefit-icon">◎</div><strong>Helpful Support</strong><small>Guidance when needed</small></div><div class="benefit"><div class="benefit-icon">↗</div><strong>Career Growth</strong><small>Build your future</small></div></div></section>
+<section class="stats" aria-label="Learning statistics"><div class="container stats-grid"><div class="stat"><strong>10+</strong><span>Trainers <small>(demo)</small></span></div><div class="stat"><strong>800+</strong><span>Students <small>(demo)</small></span></div><div class="stat"><strong>300+</strong><span>Live Training <small>(demo)</small></span></div></div></section>
+<section class="section plans-section" id="plans"><div class="container"><div class="section-heading"><span class="kicker">✦ Premium Digital Skill Pass</span><h2>Choose Your Perfect Plan</h2><p>Explore digital learning plans designed to help you develop practical skills and move forward with confidence.</p></div><div class="plans">
+<article class="plan short"><span class="popular">START HERE</span><div class="pass-letter">S</div><div class="plan-content"><h3>Short Plan</h3><ul><li>Communication Skills</li><li>Affiliate Marketing</li><li>Personality Development</li></ul><span class="price-old">NPR 999</span><div class="price">NPR 699</div><span class="vat">13% VAT included</span><br><a class="btn" href="#contact">Get Started <span>→</span></a></div></article>
+<article class="plan medium"><div class="pass-letter">M</div><div class="plan-content"><h3>Medium Plan</h3><ul><li>All Short Plan Courses</li><li>CapCut Video Editing</li><li>Canva Design Mastery</li><li>Professional Video Editing: Basic to Advanced</li></ul><span class="price-old">NPR 2,499</span><div class="price">NPR 1,899</div><span class="vat">13% VAT included</span><br><a class="btn" href="#contact">Get Started <span>→</span></a></div></article>
+<article class="plan large"><div class="pass-letter">L</div><div class="plan-content"><h3>Large Plan</h3><ul><li>All Medium Plan Courses</li><li>AI Tools</li><li>Daraz Affiliate</li><li>Live Classes &amp; Support</li></ul><span class="price-old">NPR 3,499</span><div class="price">NPR 2,899</div><span class="vat">13% VAT included</span><br><a class="btn" href="#contact">Get Started <span>→</span></a></div></article>
+<article class="plan high"><div class="plan-content"><h3>High Plan</h3><ul><li>All Large Plan Courses</li><li>MeroShare</li><li>YouTube Mastery</li><li>Extended Digital Skills</li></ul><span class="price-old">NPR 7,599</span><div class="price">NPR 5,899</div><span class="vat">13% VAT included</span><br><a class="btn" href="#contact">Get Started <span>→</span></a></div><div class="pass-letter">H</div></article>
+</div><p class="plan-note">Plan details and course access will be confirmed before enrollment.</p></div></section>
+<section class="section" id="courses"><div class="container"><div class="section-heading"><span class="kicker">Explore Your Potential</span><h2>Discover Skills That Matter</h2><p>Explore popular learning areas and find the skills that match your goals.</p></div><div class="courses-grid">
+<article class="course-card"><div class="course-art communication">COMMUNICATION</div><div class="course-content"><h3>Communication Skills</h3><p>Improve confidence, speaking, and everyday communication.</p><a class="course-label" href="#plans">Explore plans →</a></div></article>
+<article class="course-card"><div class="course-art ai">DIGITAL GROWTH</div><div class="course-content"><h3>Digital Marketing</h3><p>Understand online promotion and digital marketing basics.</p><a class="course-label" href="#plans">Explore plans →</a></div></article>
+<article class="course-card"><div class="course-art design">CANVA DESIGN</div><div class="course-content"><h3>Canva Design Mastery</h3><p>Create attractive designs for social media and projects.</p><a class="course-label" href="#plans">Explore plans →</a></div></article>
+<article class="course-card"><div class="course-art video">VIDEO + AI</div><div class="course-content"><h3>CapCut, Video Editing &amp; AI Tools</h3><p>Explore editing techniques and useful AI-powered tools.</p><a class="course-label" href="#plans">Explore plans →</a></div></article>
+</div></div></section>
+<section class="section about-section" id="about"><div class="container about-grid"><div class="about-copy"><span class="kicker">About Skill Nova Nepal</span><h2>Empowering Dreams Through Digital Skills</h2><p>We believe everyone should have the opportunity to learn, grow, and explore the digital world. Skill Nova Nepal aims to make digital learning easier to discover and more approachable.</p><p>Start with the skills that interest you, build your knowledge step by step, and keep moving toward your personal goals.</p><a class="btn btn-blue" href="#courses">Explore Skills →</a></div><div class="about-visual"><div><div class="about-symbol">🎓 💻</div><h3>Learn Today. Grow Tomorrow.</h3><p>Practical learning for a changing digital world.</p></div></div></div></section>
+<section class="section" id="why"><div class="container"><div class="section-heading"><span class="kicker">Why Choose Us?</span><h2>Your Learning Journey Matters</h2><p>A clear, welcoming place to explore digital skills and take your next step.</p></div><div class="why-grid"><article class="why-card"><div class="benefit-icon">✦</div><h3>Practical Skills</h3><p>Explore learning topics focused on useful, real-world skills.</p></article><article class="why-card"><div class="benefit-icon">◷</div><h3>Flexible Learning</h3><p>Choose a plan that suits your interests and learning goals.</p></article><article class="why-card"><div class="benefit-icon">◇</div><h3>Clear Plans</h3><p>Compare course bundles and prices before making a decision.</p></article><article class="why-card"><div class="benefit-icon">♡</div><h3>Supportive Journey</h3><p>Find the right contact channel when you need assistance.</p></article></div></div></section>
+<section class="section" id="faq"><div class="container"><div class="section-heading"><span class="kicker">Questions & Answers</span><h2>Frequently Asked Questions</h2></div><div class="why-grid"><article class="why-card"><h3>How do I choose a plan?</h3><p>Compare the included courses and select the plan that fits your learning goals.</p></article><article class="why-card"><h3>How do I register?</h3><p>Open the menu, choose Login, then select Register below the login form.</p></article><article class="why-card"><h3>How do referrals work?</h3><p>Referral and commission features will be enabled after the secure member system is connected.</p></article><article class="why-card"><h3>How can I get help?</h3><p>Use the Contact Us section to find support information.</p></article></div></div></section>
+<section class="contact-band" id="contact"><div class="container contact-inner"><div><h2>Ready to Start Your Learning Journey?</h2><p>Explore the plans and find a starting point for your digital skills journey.</p></div><a class="btn btn-gold" href="#plans">View Learning Plans →</a></div></section>
+<section class="section login-section" id="login" hidden><div class="container"><div class="auth-card"><div class="auth-logo">S</div><div id="loginPanel"><h2>Welcome Back!</h2><p class="auth-subtitle">Log in to access your member dashboard.</p><form id="loginForm"><label for="loginEmail">Email Address</label><input id="loginEmail" type="email" placeholder="Enter your email" required><label for="loginPassword">Password</label><input id="loginPassword" type="password" placeholder="Enter your password" required><button class="btn btn-blue auth-submit" type="submit">Login</button></form><p class="auth-switch">New member? <button type="button" id="showRegister">Register</button></p></div><div id="registerPanel" hidden><h2>Create Your Account</h2><p class="auth-subtitle">Register to join Skill Nova Nepal.</p><form id="registerForm"><label for="fullName">Full Name</label><input id="fullName" type="text" placeholder="Enter your full name" required><label for="mobileNumber">Mobile Number</label><input id="mobileNumber" type="tel" placeholder="Enter your mobile number" required><label for="registerEmail">Email Address</label><input id="registerEmail" type="email" placeholder="Enter your email address" required><label for="registerPassword">Password</label><input id="registerPassword" type="password" minlength="8" placeholder="Create a password (8+ characters)" required><label for="masterPromoCode">Master Promo Code</label><input id="masterPromoCode" type="text" placeholder="Enter master promo code" required><button class="btn btn-blue auth-submit" type="submit">Register</button></form><p class="auth-switch">Already a member? <button type="button" id="showLogin">Login</button></p></div><p class="auth-note" id="authNote">This is a front-end preview. Account creation and login will work after secure authentication is connected.</p></div></div></section></main>
+<footer><div class="container"><div class="footer-top"><a class="brand" href="#home"><span class="logo">S</span><span><span class="brand-name" style="color:white">Skill Nova Nepal</span><br><span class="brand-tag" style="color:#c8d6f4">Learn · Grow · Earn</span></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="#home">Home</a><a href="#plans">Learning Plans</a><a href="#about">About Us</a><a href="#why">Why Us</a><a href="#contact">Contact</a></nav></div><div class="footer-bottom">© <span id="year"></span> Skill Nova Nepal. All rights reserved.</div></div></footer>
+<a class="whatsapp-help" href="#contact" aria-label="Need help? Visit contact section"><span class="whatsapp-icon">✆</span><span>Need Help?<small>WhatsApp support</small></span></a><button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", function () {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-});
-
-navLinks.querySelectorAll("a").forEach(function (link) {
-  link.addEventListener("click", function () {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  const subject = encodeURIComponent("Message for Skill Nova Nepal");
-  const body = encodeURIComponent(
-    "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
-  );
-
-  const status = document.getElementById("formStatus");
-  status.textContent = "Add the website owner's real email address in the code to enable this email link.";
-
-  /* Replace YOUR_EMAIL@example.com with your actual contact email before launch. */
-  const ownerEmail = "YOUR_EMAIL@example.com";
-
-  if (ownerEmail !== "YOUR_EMAIL@example.com") {
-    window.location.href = "mailto:" + ownerEmail + "?subject=" + subject + "&body=" + body;
-  }
-});
+const menuButton=document.getElementById('menuButton'),mobileMenu=document.getElementById('mobileMenu');
+menuButton.addEventListener('click',()=>{const isOpen=mobileMenu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Close menu':'Open menu');menuButton.textContent=isOpen?'✕':'☰';});
+mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open menu');menuButton.textContent='☰';}));
+function showSection(target){const loginSection=document.getElementById('login');const mainSections=[...document.querySelectorAll('main > section')];if(target==='#login'){mainSections.forEach(section=>{if(section.id!=='login')section.hidden=true;});loginSection.hidden=false;document.getElementById('loginPanel').hidden=false;document.getElementById('registerPanel').hidden=true;window.scrollTo({top:0,behavior:'smooth'});}else{mainSections.forEach(section=>section.hidden=false);if(target && target!=='#home'){const el=document.querySelector(target);if(el)el.scrollIntoView({behavior:'smooth'});}else window.scrollTo({top:0,behavior:'smooth'});}}
+mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',event=>{const target=link.getAttribute('href');if(target==='#login'){event.preventDefault();showSection('#login');}else{showSection(target);}}));
+document.getElementById('showRegister').addEventListener('click',()=>{document.getElementById('loginPanel').hidden=true;document.getElementById('registerPanel').hidden=false;});document.getElementById('showLogin').addEventListener('click',()=>{document.getElementById('registerPanel').hidden=true;document.getElementById('loginPanel').hidden=false;});
+document.getElementById('loginForm').addEventListener('submit',event=>{event.preventDefault();document.getElementById('authNote').textContent='Preview only: secure account login is not connected yet.';});document.getElementById('registerForm').addEventListener('submit',event=>{event.preventDefault();document.getElementById('authNote').textContent='Preview only: registration is not connected yet. Your details have not been saved.';});
+document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('backTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
-</body>
-</html>
+</body></html>
