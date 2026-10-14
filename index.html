@@ -8,6 +8,180 @@
 <title>Skill Nova Nepal | Learn. Grow. Succeed.</title>
 
 <style>
+/* ===== SKILL NOVA NEPAL: BLUE 3D PREMIUM PACKAGE CARDS ===== */
+
+:root {
+  --green: #2563eb;
+  --dark: #102a56;
+  --light: #f0f5ff;
+  --gold: #ffc857;
+  --text: #24344d;
+  --muted: #64748b;
+}
+
+/* Wide rectangular premium cards */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.plan-card {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 20px;
+  padding: 26px;
+  background: linear-gradient(145deg, #ffffff 0%, #f2f6ff 100%);
+  border: 1px solid #cbdaf5;
+  border-radius: 18px;
+  box-shadow:
+    0 5px 0 #d2def3,
+    0 10px 22px rgba(16, 42, 86, 0.12),
+    inset 0 1px 0 #ffffff;
+  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #1d4ed8, #60a5fa, #2563eb);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 7px 0 #c4d5f2,
+    0 18px 32px rgba(37, 99, 235, 0.18),
+    inset 0 1px 0 #ffffff;
+}
+
+/* Featured plan */
+.plan-card.featured {
+  border: 2px solid #2563eb;
+  background: linear-gradient(145deg, #ffffff 0%, #eaf1ff 100%);
+  box-shadow:
+    0 5px 0 #b9cdf4,
+    0 13px 28px rgba(37, 99, 235, 0.18),
+    inset 0 1px 0 #ffffff;
+}
+
+/* Large raised S / M / L / H letter tiles */
+.plan-letter {
+  width: 82px;
+  height: 100px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  font-size: 46px;
+  font-weight: 900;
+  color: #ffffff;
+  background: linear-gradient(145deg, #60a5fa 0%, #2563eb 48%, #173ea8 100%);
+  border: 1px solid #1d4ed8;
+  box-shadow:
+    0 5px 0 #153785,
+    0 9px 15px rgba(29, 78, 216, 0.28),
+    inset 0 2px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -3px 5px rgba(9, 30, 80, 0.25);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.22);
+  transition: transform .25s ease;
+}
+
+.plan-card:hover .plan-letter {
+  transform: translateY(-2px);
+}
+
+/* Plan titles and prices */
+.plan-name {
+  color: #102a56;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.plan-subtitle {
+  color: #64748b;
+}
+
+.plan-price {
+  margin: 14px 0;
+}
+
+.old-price {
+  color: #7b8798;
+  text-decoration: line-through;
+}
+
+.sale-price {
+  color: #1d4ed8;
+  font-size: 29px;
+  font-weight: 900;
+}
+
+/* Course tick marks */
+.plan-list li::before {
+  content: "✓";
+  color: #2563eb;
+  font-weight: 900;
+  margin-right: 9px;
+}
+
+.plan-list .included {
+  background: #e2ecff;
+  color: #173ea8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-weight: 800;
+}
+
+/* Buttons */
+.plan-card .btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 3px 0 #173785;
+}
+
+.plan-card .btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .plan-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .plan-card {
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 15px;
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .plan-letter {
+    width: 60px;
+    height: 82px;
+    font-size: 34px;
+    border-radius: 12px;
+  }
+
+  .plan-name {
+    font-size: 21px;
+  }
+
+  .sale-price {
+    font-size: 25px;
+  }
+}
 :root {
   --green: #087f5b;
   --dark: #12352b;
